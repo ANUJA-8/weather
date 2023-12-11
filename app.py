@@ -31,14 +31,14 @@ def index():
             temperature = weather_data['main']['temp']
             description = weather_data['weather'][0]['description']
             # weather.html path
-            return render_template('weather.html', city=city, temperature=temperature, description=description)
+            return render_template('index.html', city=city, temperature=temperature, description=description)
         else:
             error_message = 'Failed to retrieve weather data. Check your city name.'
             # path of weather.html
-            return render_template('weather.html', error_message=error_message)  
+            return render_template('index.html', error_message=error_message)  
 
     # path of weahter.html
-    return render_template('weather.html')
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
