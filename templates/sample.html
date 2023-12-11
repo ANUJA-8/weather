@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href='styles.css'>
+
+</head>
+<body>  
+  
+        <h1>Weather Condition</h1>
+        <form method="post">
+            <lable for="city">Enter City:</lable>
+            <input type="text" id="city" name="city" required> 
+            <!-- The required attribute is used to make the input field mandatory -->
+            <button type="submit">Get Weather</button>
+        </form>
+     <!-- Jinja2 is a template engine for Python, 
+    and it is commonly used with web frameworks like Flask
+
+    The syntax of curly braces is specific to Jinja2 and is used for control statements. 
+    In this case, it's checking if the variable city exists (is truthy)
+
+    Jinja2, often used in the context of Flask or other Python web frameworks.
+-->
+
+   {% if city %}
+        <h2>Weather in {{ city }}</h2>  
+        To get egree sign in the VS Alt + 0176 
+        <p>Temperature: {{ temperature }}°C</p>  
+        <p>Description: {{ description }}</p>
+    {% elif error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}        
+  
+</body>
+</html> 
