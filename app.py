@@ -24,7 +24,7 @@ def get_weather(api_key, city):
 def index():
     if request.method == 'POST':
         city = request.form['city']
-        api_key = '99995d0dbd384bbafd5f76c81c32bd50'  # Replace with your OpenWeatherMap API key
+        api_key = '....'  # Replace with your OpenWeatherMap API key
         weather_data = get_weather(api_key, city)
 
         if 'main' in weather_data:
